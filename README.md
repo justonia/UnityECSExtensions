@@ -23,8 +23,13 @@ Under the hood it uses an EntityCommandBuffer and ComponentDataFromEntity. It co
             {
                 changeMyComponent.AddOrSetComponent(myData.Entities[i], new MyComponent{ ... }); 
                 
-                // Safe even if component doesn't exit
+                // Safe even if component doesn't exist
                 changeMyComponent.RemoveComponent(myData.Entities[i]);
+                
+                if (changeMyComponent.TryGetComponent(myData.Entities[i], out var value))
+                {
+                    ...
+                }
             }
         }
    }
