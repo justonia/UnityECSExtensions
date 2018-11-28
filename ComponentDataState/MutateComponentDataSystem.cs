@@ -48,6 +48,14 @@ namespace FknMetal
     //         for (int i = 0; i < myData.Length; i++)
     //         {
     //             changeMyComponent.AddOrSetComponent(myData.Entities[i], new MyComponent{ ... }); 
+    //
+    //             // Safe even if component doesn't exist
+    //             changeMyComponent.RemoveComponent(myData.Entities[i]);
+    //
+    //             if (changeMyComponent.TryGetComponent<myData.Entities[i], out var value)
+    //             {
+    //                 ...
+    //             }
     //         }
     //     }
     // }
